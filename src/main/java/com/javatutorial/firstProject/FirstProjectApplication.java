@@ -1,5 +1,6 @@
 package com.javatutorial.firstProject;
 
+import com.javatutorial.firstProject.dependencyinjection.DependencyInjectionDemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
