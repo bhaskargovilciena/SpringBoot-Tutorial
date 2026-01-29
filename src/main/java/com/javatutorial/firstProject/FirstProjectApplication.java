@@ -2,16 +2,17 @@ package com.javatutorial.firstProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class FirstProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FirstProjectApplication.class, args);
-		// injecting the object without creating the object. we get the object from the IOC container which is of the type ApplicationContext
-
-		MyClass myClass;
-		myClass.sayHello();
+		// SpringApplication.run returns a ApplicationContext which can be used
+		ApplicationContext context = SpringApplication.run(FirstProjectApplication.class, args);
+		// creating a bean using the ApplicationContext
+		DependencyInjectionDemo DIdemo = context.getBean(DependencyInjectionDemo.class);
+		DIdemo.doSomething();
 	}
 
 }

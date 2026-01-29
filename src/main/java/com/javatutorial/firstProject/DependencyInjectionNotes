@@ -1,0 +1,25 @@
+DEPENDENCY INJECTION
+we need to create the object of the following DependencyInjectionDemo. to make sure the spring creates the
+object, and we just need to use that object we use the ApplicationContext.
+this ApplicationContext object is returned by the line mentioned above of SpringApplication.run()...
+hence, we create the ApplicationContext object as shown.
+
+now, for whichever class we need to create the object we need to mention @Component keyword
+at the top of that class. this ensures that object is created of that class by the IOC
+container and i don't need to anything.
+
+use of AutoWired:
+suppose that now i have created a bean in the spring application. now this bean also uses
+reference of some other class then i will write @Component on that class and the object will
+be created in the IOC container. but how does the Java know that the objects created in the
+container are related to each other. this is where Autowired annotation is used. this tells
+java that the objects are related to each other and their refs must be passed to them.
+
+use of Primary:
+suppose that there is an interface I. this I is implemented by two A and B. now, in the @Component
+class we have written I.doWork() (doWork() is declared in I and overriden by A n B). java
+doesn't know which object to create A or B.
+if i explicity @Component on one of the A or B then java can identify the priority but if both
+have @Component or both dont have, then there's a confusion. hence, we have @Primary. this
+tells javac that whenever their is confusion of objects like here then prefer the one which has
+@Primary annotation. if both have Primary then again error will be thrown.
