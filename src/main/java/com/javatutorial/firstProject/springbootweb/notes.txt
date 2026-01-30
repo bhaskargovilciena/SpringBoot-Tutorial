@@ -1,0 +1,65 @@
+the software we create on springboot is run on servlets (small units of server)
+the servlets run on tomcat service
+
+the springboot application runs spring BTS on servlets using tomcat service
+
+note that we download any dependency by googling its XML code
+
+here we are using 2 main dependencies:
+1. spring web: used for creating RESTful APIs
+2. spring dev tools: useful for live reloading and other features
+3. spring database drivers: for every type of DB to be connected, we need to download driver dependency
+
+@RestController
+this tells that the particular class will be executed when a particular endpoint is hit.
+
+@GetMapping
+this annotation is used on top of function which tells that which api endpoint will lead to execution of this function. this used for GET API header
+
+@PostMapping
+this annotation is used for POST API header
+
+@PutMapping - this annotation is used for PUT API header. PUT is used for updating
+
+@RequestMapping
+this is default without any API header
+
+there is a front controller present that routes all the request to their designated functions and controllers
+
+@Controller
+if i want to return a file instead of String / int then, i will have to use @Controller, instead of RestController
+
+@Service
+this annotation is written on top of the service class to tell Spring Boot.
+
+there is a dependency name of lombok. it helps to create getters and setters easily for all the pvt variables
+this is added in the project and can be added from maven repo. lombok gives 2 annotations-
+1. @Data - this is used to set the getters and setters for all private automatically BTS
+2. @All-ArgsConstructor - all the pvt arguments can be set from the constructor directly, we need not create explicitly
+
+there are in total 3 layers in the server - controller, service, repository
+controllers is where the client interacts. controllers talk to service layers in the project for business logic.
+the DB is also connected with the service layer
+the DB's requests are handled by the repository layer.
+
+server port can be mentioned from the application.properties in the resources package
+
+MVC stands for Model View Controller. model is the entity, view is the data returned and controller is where the client interacts
+
+to pass query parameters from the API URL, we use @PathVariable annotation
+the demo is shown in the product controller class
+
+to pass request body as a variable in the API url, we use @RequestBody annotation.
+the demo is shown in the product controller class
+
+DATABASE CONNECTION
+the DB is connected in the service layer and managed in the repository layer.
+we use JDBC to connect the DB.
+but if our operations are simple like CRUD then we can use ORM (Object Relational Mapping).
+ORM is a tool which helps to create a table from the list of products.
+
+JPA - Java Persistence APIs = this is the standard followed by various ORMs so that everything is on the page and i can change
+the ORM as and when i need.
+we download 2 dependencies further: 1. springboot data jpa and 2. h2 database from maven repo
+to finally configure the database we need to mention in the application.properties the statement that is mentioned.
+when loading h2 database, always remember to change the scope to runtime instead of test

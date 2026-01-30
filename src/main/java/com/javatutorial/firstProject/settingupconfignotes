@@ -1,0 +1,21 @@
+to setup the spring boot project, go to spring initializer in google.
+from there set the latest version of springboot and the version of java of which u have JDK
+then download the zip file and extract it.
+open the folder in intellij / any other IDE u r using and its good to go.
+
+to install a dependency follow the steps:
+1. go to online maven repo for spring boot dependency
+2. copy paste the XML code for that dependency in the pom.xml (POM = project object model)
+3. rerun the maven project using right click and then sync project in maven options.
+4. the dependency will be installed
+
+structure of the contents in the springboot directory:
+1. main - contains the functions/codes etc.
+2. test - contains the unit test functionality that is required to test the application
+
+inside main there 2 dir-
+1. java - this contains all the code
+2. resources - this contains static data like images, videos etc to be displayed
+
+inside the java folder we have the com. package and inside that we create all the further dir
+we want to
