@@ -1,0 +1,5 @@
+to do unit testing, we use JUnit testing package provided by Java. we use the JUnit API testing dependency in the maven repo to include this
+
+we are going to create the controller, model, repository, services just like we created in main package
+
+we use the annotation @Test to declare that this function is a test and @SpringBootTest to tell that this class is used for testing
