@@ -52,6 +52,9 @@ the demo is shown in the product controller class
 to pass request body as a variable in the API url, we use @RequestBody annotation.
 the demo is shown in the product controller class
 
+if i have multiple objects in the API url, then we use @RequestPart annotation before the argument.
+demo is not shown as its just replacement
+
 DATABASE CONNECTION
 the DB is connected in the service layer and managed in the repository layer.
 we use JDBC to connect the DB.
@@ -60,6 +63,26 @@ ORM is a tool which helps to create a table from the list of products.
 
 JPA - Java Persistence APIs = this is the standard followed by various ORMs so that everything is on the page and i can change
 the ORM as and when i need.
-we download 2 dependencies further: 1. springboot data jpa and 2. h2 database from maven repo
+we download 2 dependencies further: 1. springboot data starter jpa and 2. h2 database from maven repo
 to finally configure the database we need to mention in the application.properties the statement that is mentioned.
 when loading h2 database, always remember to change the scope to runtime instead of test
+
+DATABASE CONNECTIVITY
+1. create a new package by the name of repositories. in that repo package create an interface which extends JpaRepository.
+2. in the JPARepository add 2 items that are: what entity needs to be modelled and what should be the primary key
+3. use the instance of that interface in the services package and update all the business logic according to database
+4. use @Repository annotation on top of interface which extends JpaRepository for telling SpringBoot that this is a service
+5. use @Autowired annotation in the services class to get the instance of repository.
+6. in the controller package which has the object model add @Id on top of primary key field and @Entity over model class
+
+ResponseEntity:
+this is an object that can be returned to the frontend client. the benefit of using this and not returning direct List<>
+or anything else is that it allows me to send custom status code, custom status message etc to the frontend client for better handling of errors.
+
+@Transactional Annotation
+this annotation is used to tell the Spring Boot that the function will be executed wholely or else no operation of that function will be executed.
+this satisfies the atomicity property of transactions
+this annotation also needs @TransactionalManagement on top of main class of the project.
+there is an interface that commits and rollbacks the transaction called "PlatformTransactionManager".
+there is a proper class that implements this interface. this class varies depending on whether u r using mongoDb or neo4j
+for mongo its "MongoTransactionManager".
