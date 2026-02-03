@@ -1,0 +1,6 @@
+by default, we have a profile that is used in development mode. for production mode, we need a separate profile coz we have a different DB for prod and dev.
+we need to create 2 more files:
+1. application-properties-dev: for dev mode
+2. application-properties-prod: for prod mode
+
+by default application-properties will run and there we mention which file to run as in which mode we are using.

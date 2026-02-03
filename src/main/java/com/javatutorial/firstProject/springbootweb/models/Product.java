@@ -7,13 +7,18 @@ import lombok.Data;
 import org.springframework.stereotype.Component;
 
 @Data
-@AllArgsConstructor
 @Entity
 public class Product {
     @Id
     private int prodId;
     private String prodName;
     private int price;
+
+    public Product(int prodId, String prodName, int price) {
+        this.prodId = prodId;
+        this.prodName = prodName;
+        this.price = price;
+    }
 
     public Product() {
 
