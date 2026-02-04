@@ -1,12 +1,10 @@
-package com.javatutorial.firstProject.springbootweb.service;
+package com.javatutorial.firstProject.spring_boot_web.service;
 
-import com.javatutorial.firstProject.springbootweb.models.Product;
-import com.javatutorial.firstProject.springbootweb.repositories.ProductRepository;
+import com.javatutorial.firstProject.spring_boot_web.models.Product;
+import com.javatutorial.firstProject.spring_boot_web.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service

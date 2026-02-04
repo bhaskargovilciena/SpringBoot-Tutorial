@@ -1,6 +1,6 @@
-package com.javatutorial.firstProject.springbootweb.repositories;
+package com.javatutorial.firstProject.spring_boot_web.repositories;
 
-import com.javatutorial.firstProject.springbootweb.models.Product;
+import com.javatutorial.firstProject.spring_boot_web.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 

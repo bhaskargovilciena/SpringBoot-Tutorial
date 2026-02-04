@@ -1,10 +1,8 @@
-package com.javatutorial.firstProject.springbootweb.models;
+package com.javatutorial.firstProject.spring_boot_web.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 @Data
 @Entity

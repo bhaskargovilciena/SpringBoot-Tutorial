@@ -1,7 +1,7 @@
-package com.javatutorial.firstProject.springbootweb.controllers;
+package com.javatutorial.firstProject.spring_boot_web.controllers;
 
-import com.javatutorial.firstProject.springbootweb.models.Product;
-import com.javatutorial.firstProject.springbootweb.service.ProductService;
+import com.javatutorial.firstProject.spring_boot_web.models.Product;
+import com.javatutorial.firstProject.spring_boot_web.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

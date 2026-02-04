@@ -1,8 +1,7 @@
-package com.javatutorial.firstProject.springbootweb.services;
+package com.javatutorial.firstProject.spring_boot_web.services;
 
-import com.javatutorial.firstProject.springbootweb.models.Product;
-import com.javatutorial.firstProject.springbootweb.service.ProductService;
-import org.junit.jupiter.api.Disabled;
+import com.javatutorial.firstProject.spring_boot_web.models.Product;
+import com.javatutorial.firstProject.spring_boot_web.service.ProductService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

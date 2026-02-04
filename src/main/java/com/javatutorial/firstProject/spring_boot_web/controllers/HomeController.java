@@ -1,4 +1,4 @@
-package com.javatutorial.firstProject.springbootweb.controllers;
+package com.javatutorial.firstProject.spring_boot_web.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
