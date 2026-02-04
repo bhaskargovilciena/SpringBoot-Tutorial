@@ -1,21 +1,18 @@
-package com.javatutorial.firstProject.spring_boot_web.controllers;
+package com.javatutorial.firstProject.exception_handling.controllers;
 
-import com.javatutorial.firstProject.spring_boot_web.models.Product;
-import com.javatutorial.firstProject.spring_boot_web.service.ProductService;
+import com.javatutorial.firstProject.exception_handling.models.Product;
+import com.javatutorial.firstProject.exception_handling.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import java.util.List;
 
 @RestController
 public class ProductController {
 
-    private final ProductService productService;
-
     @Autowired
-    public ProductController(ProductService productService) {
-        this.productService = productService;
-    }
+    private ProductService productService;
+
     @GetMapping("/products")
     public List<Product> returnProducts() {
         return productService.getAllProducts();

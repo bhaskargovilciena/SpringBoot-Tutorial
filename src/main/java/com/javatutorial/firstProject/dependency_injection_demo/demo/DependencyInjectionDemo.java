@@ -3,7 +3,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DependencyInjectionDemo {
-    private Computer computer;
+    private final Computer computer;
 
     public DependencyInjectionDemo(Computer computer) {
         this.computer = computer;

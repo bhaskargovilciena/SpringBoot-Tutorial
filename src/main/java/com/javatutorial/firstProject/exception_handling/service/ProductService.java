@@ -1,7 +1,7 @@
-package com.javatutorial.firstProject.spring_boot_web.service;
+package com.javatutorial.firstProject.exception_handling.service;
 
-import com.javatutorial.firstProject.spring_boot_web.models.Product;
-import com.javatutorial.firstProject.spring_boot_web.repositories.ProductRepository;
+import com.javatutorial.firstProject.exception_handling.models.Product;
+import com.javatutorial.firstProject.exception_handling.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +10,7 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private final ProductRepository productRepository;
-
+    ProductRepository productRepository;
     @Autowired
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
