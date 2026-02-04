@@ -1,0 +1,15 @@
+there are 2 types of exceptions:
+1. in-built: which are present by springboot or java
+2. custom: exceptions which are created by the programmer
+
+the sample project has been added from springboot_web dir so that easily things can be demonstrated
+
+we use the annotation of ExceptionHandler to handle all the exceptions. we specify what kinds of exceptions
+will be handled by this function and what will be the response entity returned so that our application does not
+restart always, and we can gracefully handle all the exceptions
+
+to handle multiple exceptions via the same error handler, we use curly braces, change the argument to type Exception.
+
+org of exception handlers:
+we use exception handlers inside a spl package of exceptions, we create a global class called "Global Exception Handler"
+we use the annotation of @RestControllerAdvice to handle all the exceptions

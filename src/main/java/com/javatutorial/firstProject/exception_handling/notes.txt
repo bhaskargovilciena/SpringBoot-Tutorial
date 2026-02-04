@@ -1,5 +1,0 @@
-there are 2 types of exceptions:
-1. in-built: which are present by springboot or java
-2. custom: exceptions which are created by the programmer
-
-the sample project has been added from springboot_web dir so that easily things can be demonstrated

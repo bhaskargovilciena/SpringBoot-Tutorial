@@ -1,0 +1,17 @@
+used when debugging to understand what is happening. also used for monitoring of the application. used for error tracking too.
+
+various logging levels:
+1. TRACE: more and more info
+2. DEBUG: more info
+3. INFO: default
+4. WARN: lower info
+5. ERROR: very low info, just tells that error has occurred.
+
+logging frameworks: used when creating custom logs
+SLF4J (Simple logging facade for java) is the interface which is used to implement logs.
+we can create custom implementations of this interface to create our logs
+
+we use the .getLogger() from LoggerFactory to create an instance of logger in the service class.
+then we use that logger object and call .info(), .error(), .trace() errors and pass the text as arguments
+
+command used to set the default logging level in debug logs in application.properties: logging.level.root=DEBUG
