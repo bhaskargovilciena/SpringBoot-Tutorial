@@ -1,0 +1,38 @@
+spring security uses the "basic auth" authorization header of HTTP request to send and receive encrypted information
+
+we need to add dependency of spring-security-starter so that the functions are performed.
+
+by default spring boot does the following activities:
+1. generates a custom username and password. username is "user" and password is printed on the run terminal.
+all the endpoints are secured with this username and password.
+if i directly run the api's again on postman then it will show error 401 unauthorized. hence, we need to give username and password
+in the authorization tab of postman. postman automatically creates a header of basic auth and adds "username:password"
+with actual values encoded in base 64 form. now all the endpoints are secured. the same can checked by passing user:<password> in base64encode.org website and checking what header is being passed
+
+WebSecurityConfigurerAdapter: it is the class which contains some default configs and provides methods to customized spring security
+the code has been added in the config package
+
+various methods present in configure() in config package
+1. .authorizeRequests(): tells spring boot to start authorizing the requests
+2. .antMatchers("/hello").permitAll(): tells spring boot to match all the endpoints all the ones which are similar to "/hello" must be permitted
+3. .anyRequest().authenticated(): this is a more general matcher that tells that all the endpoints that were not matched earlier must be matched rn
+and user must provide credentials to access them
+4. .and() is the method to join various configs
+5. .formLogin(): enables form based authentication. user enters username and password. if matched, then access provided else redirected to default formLogin()
+
+sometimes we authorize the user once and send a session cookie back to the user to validate continuously. helps to create a session.
+session steps:
+1. session is created when authenticated first time
+2. session sends session id with the user in form of cookie
+3. session id is validated every time secure url is accessed
+4. on logout / session id expiry, it is deleted
+5. remember-me: another cookie stores the id for longer duration
+
+now, we want the service to authenticate the password from the hashed password stored in the database.
+for this we follow 4 steps:
+1. a product entity to represent the product data model
+2. a repository UserRepository to interact with MongoDB
+3. UserDetailsService interface implementation in a separate Service class which implements this built-in interface
+4. a configure method of SecurityConfig in config package handles the auth requests
+
+we need to disable csrf: cross site forgery.

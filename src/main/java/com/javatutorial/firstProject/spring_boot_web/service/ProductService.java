@@ -36,7 +36,7 @@ public class ProductService {
 
     public Product getProductById(int id) {
 //        return allProducts.stream().filter(prod -> prod.getProdId() == id).findFirst().orElseThrow();
-        return productRepository.findById(id).orElseThrow();
+        return productRepository.findProductByProdId(id);
     }
 
     public void addProduct(Product product) {
@@ -48,7 +48,10 @@ public class ProductService {
 //        Product oldProduct = getProductById(product.getProdId());
 //        allProducts.remove(oldProduct);
 //        allProducts.add(product);
-        if(productRepository.findById(prodId).isEmpty()) {
+        try {
+            productRepository.findProductByProdId(prodId);
+        }
+        catch (Exception e) {
             logger.error("error log...");
             logger.info("info log...");
             logger.trace("error log...");

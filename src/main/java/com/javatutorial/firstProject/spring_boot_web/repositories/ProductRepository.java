@@ -8,4 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
+    Product findProductByProdId(int prodId);
 }
